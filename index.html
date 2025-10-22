@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vishant's Online Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CodeMirror Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/eclipse.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/nord.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+
+    <!-- CodeMirror Add-ons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/lint/lint.min.js"></script>
+
+    <!-- CodeMirror Language Modes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/clike/clike.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Vishant's Code Editor</h1>
+        <div class="theme-toggle">
+            <label for="darkModeToggle" class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="mode-text">Dark Mode</span>
+        </div>
+    </header>
+    <div class="container">
+        <div class="editor-controls">
+            <div class="language-selector">
+                <label for="languageSelect">Language:</label>
+                <select id="languageSelect">
+                    <option value="htmlmixed">HTML/CSS/JS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="css">CSS</option>
+                    <option value="python">Python</option>
+                    <option value="text/x-csrc">C</option>
+                    <option value="text/x-java">Java</option>
+                </select>
+            </div>
+            <div class="theme-selector">
+                <label for="themeSelect">Editor Theme:</label>
+                <select id="themeSelect">
+                    <option value="default">Default</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="material">Material</option>
+                    <option value="nord">Nord</option>
+                    <option value="eclipse">Eclipse</option>
+                </select>
+            </div>
+            <div class="font-size-control">
+                <label for="fontSizeSelect">Font Size:</label>
+                <select id="fontSizeSelect">
+                    <option value="12">12px</option>
+                    <option value="14" selected>14px</option>
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                </select>
+            </div>
+        </div>
+        <div class="editor-container">
+            <textarea id="codeEditor"></textarea>
+        </div>
+        <div class="button-container">
+            <button id="runButton" class="primary-btn"><span class="btn-icon">▶</span> Run</button>
+            <button id="saveButton"><span class="btn-icon">💾</span> Save</button>
+            <button id="loadButton"><span class="btn-icon">📂</span> Load</button>
+            <button id="clearButton"><span class="btn-icon">🗑️</span> Clear</button>
+            <button id="copyButton"><span class="btn-icon">📋</span> Copy Code</button>
+        </div>
+        <div class="output-container">
+            <div class="output-header">
+                <h3>Output</h3>
+                <button id="clearOutputButton" class="secondary-btn">Clear Output</button>
+            </div>
+            <div id="outputContainer"></div>
+        </div>
+    </div>
+    <footer>
+        <p>Vishant's Code Editor - Created with HTML, CSS & JavaScript</p>
+        <p class="version">Version 1.2.0</p>
+    </footer>
+
+    <!-- Include the script file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
